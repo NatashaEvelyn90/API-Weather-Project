@@ -9,15 +9,27 @@
 </head>
 <body>
     <header>
-        <h1>Your future forecast</h1>
-        <ul>
+        <ul class="mainInfo d-flex flex-wrap justify-content-evenly">
             <li><a href="#">About</a></li>
             <li><a href="#">stuff</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
+        <h1 class="text-center">Your Local Weather</h1>
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+        <input type="text" id="zipCode" placeholder="Enter Zip Location">
+        <button id="weatherUpdate">Get Forecast!</button>
+
+        <div class="yourLocation" id="zipLocation"></div>
+        <div class="weatherInfo d-flex flex-wrap col-sm-8" id="forecast"></div>
+    </main>
+    <footer class="foot">
+        <div class="musicPlayer">
+            <audio id="calmTheme" hidden loop></audio>
+            <button class="pause"></button>
+            <!-- <div class="titleScroll">Kingdom Hearts- Destiny Island</div> -->
+        </div>
+    </footer>
     <script src="./JS/app.js"></script>
 </body>
 </html>
