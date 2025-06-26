@@ -5,30 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/bootstrap.min.css">
     <link rel="stylesheet" href="./CSS/style.css">
-    <title>The Weather</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <title>Your Weather</title>
 </head>
 <body>
     <header>
-        <ul class="mainInfo d-flex flex-wrap justify-content-evenly">
-            <li><a href="#">About</a></li>
-            <li><a href="#">stuff</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-        <h1 class="text-center">Your Local Weather</h1>
+        <img src="./MEDIA/picture-of-real-sun-the-color-of-fire-red-21.png" alt="sun" class="sunnyBackground" id="dayCycle" hidden>
+        <img src="./MEDIA/picture-of-real-sun-the-color-of-fire-red-21.png" alt="sun" class="sunnyBackgroundTwo" id="dayCycleTwo" hidden>
+
+        <img src="./MEDIA/starmap_random_2020_4k_gal_print.jpg" alt="starmap" class="starMap" id="ourGalaxy">
+
+        <img src="./MEDIA/moon-1898047_1280.png" alt="moon" class="nightBackground" id="nightCycle" hidden>
+        <img src="./MEDIA/moon-1898047_1280.png" alt="moon" class="nightBackgroundTwo" id="nightCycleTwo" hidden>
+        
+        <span class="d-flex align-items-center justify-content-center mainMenu">
+            <!-- <img src="./MEDIA/clouds-128.png" alt="a green cloud" class="me-auto"> -->
+            <ul class="mainInfo d-flex flex-wrap justify-content-evenly">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Interesting Stuff</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </span>
+        <h1 class="text-center mainTitle">Your Local Weather</h1>
     </header>
     <main>
-        <input type="text" id="zipCode" placeholder="Enter Zip Location">
-        <button id="weatherUpdate">Get Forecast!</button>
+        <input type="text" id="zipCode" placeholder="Enter Zip Location" class="inputDesign">
+        <button id="weatherUpdate">GO</button>
 
-        <div class="yourLocation" id="zipLocation"></div>
-        <div class="weatherInfo d-flex flex-wrap col-sm-8" id="forecast"></div>
+        <span class="yourLocation" id="zipLocation"></span>
+        <span class="weatherInfo container-fluid" id="forecast"></span>
     </main>
-    <footer class="foot">
-        <div class="musicPlayer">
-            <audio id="calmTheme" hidden loop></audio>
-            <button class="pause"></button>
-            <!-- <div class="titleScroll">Kingdom Hearts- Destiny Island</div> -->
-        </div>
+    <footer class="foot" id="footEr">
+        <span class="musicPlayer">
+            <audio src="./MEDIA/Final Fantasy XV OST- Gratia Mundi.mp3" id="eveningTheme" hidden loop></audio>
+            <audio src="./MEDIA/101 Chrono Cross ~ Time's Scar.mp3" id="morningTheme" hidden loop></audio>
+            <button class="pause">Pause</button>
+        </span>
     </footer>
     <script src="./JS/app.js"></script>
 </body>

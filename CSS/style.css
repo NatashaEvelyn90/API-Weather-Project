@@ -2,11 +2,129 @@ body {
     background-color: black;
 }
 
-li, a {
+.sunnyBackground {
+    position: fixed;
+    width: 60%; 
+    top: 30%;
+    right: 63%;
+    z-index: -1; 
+}
+
+.sunnyBackgroundTwo {
+    position: fixed;
+    width: 60%; 
+    top: 28%;
+    right: 57%;
+    z-index: -2; 
+    filter: blur(50px) brightness(2.2)
+}
+
+.starMap {
+    position: fixed;
+    width: 100%;
+    height: -webkit-fill-available;
+    z-index: -3;
+    opacity: .7;
+}
+
+.nightBackground {
+    position: fixed;
+    width: 50%;
+    top: -30%;
+    left: 63%;
+    z-index: -1;
+}
+.nightBackgroundTwo {
+    position: fixed;
+    width: 60%;
+    top: -41%;
+    left: 58%;
+    z-index: -2;
+    filter: blur(20px) brightness(2.2);
+    opacity: .5;
+}
+
+.mainMenu {
+    background-color: rgba(0, 0, 0, 0.63);
+}
+
+li {
     list-style-type: none;
+    /* margin-top: 20px; */
+    font-size: 15px;
+    padding: 30px;
+    &:hover {
+        background-color: rgba(46, 13, 13, 0.317);
+    }
+}
+
+a {
     text-decoration: none;
+    color: ghostwhite;
+    font-weight: bold;
+    padding: 20px;
+    &:hover {
+        color: yellow;
+    }
+    
+}
+
+.mainTitle {
+    color: rgb(106, 106, 196);
+    font-size: 70px;
+    font-family: "Koh Santepheap", serif;
+    font-weight: 500;
 }
 
 .mainInfo {
-    
+    /* padding-bottom: 30px; */
+    padding-left: 0px;
+    margin-bottom: 0px;
+}
+
+.inputDesign {
+    background-color: rgba(0, 0, 0, 0.63);
+    color: pink;
+    border: 5px double blue;
+    height: 60px;
+    text-align: center;
+    font-size: 20px;
+    width: 7%;
+}
+
+
+
+
+
+
+h2 {
+    color: pink;
+    text-align: center;
+    font-size: x-large;
+}
+
+h3 {
+color: yellow;
+}
+
+.weatherInfo {
+    /* width: 100%; */
+}
+
+p {
+    color: red;
+}
+
+p:nth-child(odd) {
+    color: blue;
+}
+
+div {
+
+}
+
+.foot {
+background-color: rgba(0, 0, 0, 0.623);
+height: 300px;
+position: fixed;
 }
