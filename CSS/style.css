@@ -14,12 +14,25 @@ body {
     display: block;
     background-image: linear-gradient(to right, #000000 0%, #6a6ac4  51%, #000000  100%);
     &:hover {
-        background-position: right center; /* change the direction of the change here */
+        background-position: right center; /*? change the direction of the light thingy */
         color: snow;
         text-decoration: none;
     }
 }
-   
+
+/*! Image + Backgrounds begin  */
+/* #region */
+.starMap {
+    position: fixed;
+    margin: 0px;
+    width: 100%;
+    height: -webkit-fill-available;
+    z-index: -3;
+    opacity: .7;
+}
+
+/*? Morning Backgrounds  */
+/* #region */
 .sunnyBackground {
     position: fixed;
     width: 60%; 
@@ -37,7 +50,41 @@ body {
     filter: blur(50px) brightness(2.2);
     animation: planetPulse 5s ease 0s infinite normal none;
 }
+/* #endregion */
 
+/*? Secret One Backgrounds  */
+/* #region */
+.heatBackgroundImg {
+margin: 0px;
+position: fixed;
+width: 100%;
+z-index: -2;
+}
+
+.heatBackgroundMain {
+    margin: 0px;
+position: fixed;
+left: 80%;
+top: 43%;
+width: 20%;
+z-index: 1;
+}
+
+.heatBackgroundMainTwo {
+    margin: 0px;
+    position: fixed;
+left: 80%;
+top: 43%;
+width: 20%;
+z-index: 0;
+    filter: blur(10px) drop-shadow(10px 10px 10px red);
+    animation: heat 2s ease 0s infinite normal none;
+}
+
+/* #endregion */
+
+/*? Afternoon Backgrounds */
+/* #region */
 .earthBackground {
     position: fixed;
     width: 60%;
@@ -56,16 +103,38 @@ body {
     animation: planetPulse 8s ease 0s infinite normal none;
 
 }
+/* #endregion */
 
-.starMap {
-    position: fixed;
+/*? Secret Two Background  */
+/* #region */
+.weaponDealer {
     margin: 0px;
+    position: fixed;
     width: 100%;
-    height: -webkit-fill-available;
-    z-index: -3;
-    opacity: .7;
+    z-index: -1;
+    filter: brightness(0.5);
 }
 
+.personaLogo {
+width: 23%;
+    position: fixed;
+    top: 75%;
+    left: -14%;
+    z-index: 1;
+}
+
+.personaLogoTwo {
+width: 23%;
+    position: fixed;
+    top: 75%;
+    left: -13%;
+    filter: blur(10px) brightness(0.4) drop-shadow(10px 10px 10px darkred);
+    animation: heat 2s ease 0s infinite normal none;
+}
+/* #endregion */
+
+/*? Evening Backgrounds  */
+/* #region */
 .nightBackground {
     position: fixed;
     width: 50%;
@@ -83,7 +152,12 @@ body {
     opacity: .5;
     animation: planetPulse 8s ease 0s infinite normal none;
 }
+/* #endregion */
 
+/* #endregion */
+
+/*! Animations  */
+/* #region */
 @keyframes planetPulse {
   0% {
 	opacity: 0.8;
@@ -100,6 +174,35 @@ body {
 	transform: scale(2.2);
   }
 }
+
+@keyframes heat {
+  0% {
+	animation-timing-function: ease-out;
+	transform: scale(1);
+	transform-origin: center center;
+  }
+
+  10% {
+	animation-timing-function: ease-in;
+	transform: scale(0.91);
+  }
+
+  17% {
+	animation-timing-function: ease-out;
+	transform: scale(0.98);
+  }
+
+  33% {
+	animation-timing-function: ease-in;
+	transform: scale(0.87);
+  }
+
+  45% {
+	animation-timing-function: ease-out;
+	transform: scale(1);
+  }
+}
+/* #endregion */
 
 .mainMenu {
     background-color: rgba(0, 0, 0, 0.63);
@@ -126,15 +229,28 @@ a {
     }
     
 }
-
-.mainTitle {
+/*! "Your Local Weather" Section  */
+/* #region */
+.mainTitleMorning {
     color: rgb(106, 106, 196);
     font-size: 70px;
     font-family: "Koh Santepheap", serif;
     font-weight: 500;
 }
 
-.mainTitleMorning {
+.mainTitleHeat {
+    
+}
+
+.maintTitleAfternoon {
+
+}
+
+.mainTitleArms {
+
+}
+
+.mainTitleEvening {
     color: rgb(106, 106, 196);
     font-size: 70px;
     font-family: "Koh Santepheap", serif;
@@ -161,7 +277,7 @@ a {
 
 } */
 
-
+/* #endregion */
 .mainInfo {
     /* padding-bottom: 30px; */
     padding-left: 0px;
@@ -251,12 +367,19 @@ color: rgb(106, 106, 196);
 
 } */
 
+/*! FOOTER  */
+/* #region */
 .foot {
 background-color: rgba(0, 0, 0, 0.63);
 height: 100px;
 color: rgb(106, 106, 196);
 /* position: fixed; */
 }
+
+.heatDancing {
+    margin: 0px;
+}
+/* #endregion */
 
 
 @media only screen and (max-width: 686px) {

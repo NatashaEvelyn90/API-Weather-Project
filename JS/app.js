@@ -1,34 +1,78 @@
 const yourLocationWeather = document.getElementById("weatherUpdate");
+
+//* Background Music
+// #region
 const goodMorning = document.getElementById("morningTheme");
-const goodAfternoon = document.getElementById("afternoonTheme")
+const secretOne = document.getElementById("secretSongOne");
+const goodAfternoon = document.getElementById("afternoonTheme");
+const secretTwo = document.getElementById("secretSongTwo");
 const goodEvening = document.getElementById("eveningTheme");
+// #endregion
+
 const bottomFoot = document.getElementById("footEr")
 
 
 function backgroundTime() {
     const currentTime = new Date().getHours();
+
+    //! Images
+    // #region 
+    //? Morning images
     const sunnyImage = document.querySelector("#dayCycle");
     const sunnyImageTwo = document.querySelector("#dayCycleTwo");
-    const earthImage = document.querySelector("#afternoonCycle")
-    const earthImageTwo = document.querySelector("#afternoonCycleTwo")
+
+    //? Heat Images 
+    const heatOne = document.querySelector("#datHeat");
+    const heatTwo = document.querySelector("#datHeatTwo");
+    const heatThree = document.querySelector("#datHeatThree");
+    const heatFour = document.querySelector("#datHeatFour");
+
+    //? Afternoon Images
+    const earthImage = document.querySelector("#afternoonCycle");
+    const earthImageTwo = document.querySelector("#afternoonCycleTwo");
+
+    //? Arms Dealer
+    const dealer = document.querySelector("#persona");
+    const dealerTwo = document.querySelector("#personaTwo");
+    const dealerThree = document.querySelector("#personaThree");
+
+    //? Evening Images
     const nightImage = document.querySelector("#nightCycle");
     const nightImageTwo = document.querySelector("#nightCycleTwo");
+
     let backgroundImageURL;
+  // #endregion
 
     
     if (currentTime >= 6 && currentTime < 12) {
-      backgroundImageURL = sunnyImage; // Daytime image
+      backgroundImageURL = sunnyImage; //? Daytime image
       sunnyImage.removeAttribute("hidden");
       sunnyImageTwo.removeAttribute("hidden");
       goodMorning.play();
-    } else if(currentTime >= 12 && currentTime < 16) {
-      backgroundImageURL = earthImage; //Afternoon Image
+
+    } else if(currentTime >= 12 && currentTime < 14) {
+      backgroundImageURL = heatOne; //? Secret Song One
+      heatOne.removeAttribute("hidden");
+      heatTwo.removeAttribute("hidden");
+      heatThree.removeAttribute("hidden");
+      heatFour.removeAttribute("hidden");
+      secretOne.play();
+
+    }else if(currentTime >= 14 && currentTime < 18) {
+      backgroundImageURL = earthImage; //? Afternoon Image
       earthImage.removeAttribute("hidden");
       earthImageTwo.removeAttribute("hidden");
       goodAfternoon.play();
 
-    } else {
-        backgroundImageURL = nightImage; // Nighttime image
+    } else if(currentTime >= 18 && currentTime < 19) {
+      backgroundImageURL = dealer; //? Secret Song Two
+      dealer.removeAttribute("hidden");
+      dealerTwo.removeAttribute("hidden");
+      dealerThree.removeAttribute("hidden");
+      secretTwo.play();
+
+    }else {
+        backgroundImageURL = nightImage; //? Nighttime image
         nightImage.removeAttribute("hidden");
         nightImageTwo.removeAttribute("hidden");
         goodEvening.play();
