@@ -204,9 +204,19 @@ width: 23%;
 }
 /* #endregion */
 
+/*! Main Menu section  */
+/* #region */
 .mainMenu {
     background-color: rgba(0, 0, 0, 0.63);
     width: 100%;
+}
+
+.mainMenuTwo {
+
+}
+
+.mainMenuThree {
+
 }
 
 li {
@@ -215,7 +225,7 @@ li {
     font-size: 15px;
     padding: 30px;
     &:hover {
-        background-color: rgba(46, 13, 13, 0.317);
+        background-color: rgba(9, 22, 117, 0.416);
     }
 }
 
@@ -229,6 +239,8 @@ a {
     }
     
 }
+/* #endregion */
+
 /*! "Your Local Weather" Section  */
 /* #region */
 .mainTitleMorning {
