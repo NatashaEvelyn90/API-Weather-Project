@@ -3,9 +3,13 @@ const yourLocationWeather = document.getElementById("weatherUpdate");
 //* Background Music
 // #region
 const goodMorning = document.getElementById("morningTheme");
+const softMuseum = document.getElementById("softMuseumSong");
 const secretOne = document.getElementById("secretSongOne");
 const goodAfternoon = document.getElementById("afternoonTheme");
+const gratia = document.getElementById("fifteenSong");
+const puzzles = document.getElementById("tetrisTheme")
 const secretTwo = document.getElementById("secretSongTwo");
+const risetteSong = document.getElementById("thatSongstress")
 const goodEvening = document.getElementById("eveningTheme");
 // #endregion
 
@@ -13,71 +17,116 @@ const bottomFoot = document.getElementById("footEr")
 
 
 function backgroundTime() {
-    const currentTime = new Date().getHours();
+  const currentTime = new Date().getHours();
 
-    //! Images
-    // #region 
-    //? Morning images
-    const sunnyImage = document.querySelector("#dayCycle");
-    const sunnyImageTwo = document.querySelector("#dayCycleTwo");
+  //! Images
+  // #region 
 
-    //? Heat Images 
-    const heatOne = document.querySelector("#datHeat");
-    const heatTwo = document.querySelector("#datHeatTwo");
-    const heatThree = document.querySelector("#datHeatThree");
-    const heatFour = document.querySelector("#datHeatFour");
+  const milkyWay = document.querySelector("#ourGalaxy")
 
-    //? Afternoon Images
-    const earthImage = document.querySelector("#afternoonCycle");
-    const earthImageTwo = document.querySelector("#afternoonCycleTwo");
+  //? Morning images
+  const sunnyImage = document.querySelector("#dayCycle");
+  const sunnyImageTwo = document.querySelector("#dayCycleTwo");
 
-    //? Arms Dealer
-    const dealer = document.querySelector("#persona");
-    const dealerTwo = document.querySelector("#personaTwo");
-    const dealerThree = document.querySelector("#personaThree");
+  //? Heat Images 
+  const heatOne = document.querySelector("#datHeat");
+  const heatTwo = document.querySelector("#datHeatTwo");
+  const heatThree = document.querySelector("#datHeatThree");
+  const heatFour = document.querySelector("#datHeatFour");
 
-    //? Evening Images
-    const nightImage = document.querySelector("#nightCycle");
-    const nightImageTwo = document.querySelector("#nightCycleTwo");
+  //? Afternoon Images
+  const earthImage = document.querySelector("#afternoonCycle");
+  const earthImageTwo = document.querySelector("#afternoonCycleTwo");
 
-    let backgroundImageURL;
-  // #endregion
+  //? Arms Dealer
+  const dealer = document.querySelector("#persona");
+  const dealerTwo = document.querySelector("#personaTwo");
+  const dealerThree = document.querySelector("#personaThree");
+  const dealerFour = document.querySelector("#personaFour");
 
-    
-    if (currentTime >= 6 && currentTime < 12) {
-      backgroundImageURL = sunnyImage; //? Daytime image
-      sunnyImage.removeAttribute("hidden");
-      sunnyImageTwo.removeAttribute("hidden");
-      goodMorning.play();
+  //? Risette
+  const risette = document.querySelector("#personaBackground");
+  const risetteTwo = document.querySelector("#songstress");
+  const risetteThree = document.querySelector("#songstressTwo")
 
-    } else if(currentTime >= 12 && currentTime < 14) {
-      backgroundImageURL = heatOne; //? Secret Song One
-      heatOne.removeAttribute("hidden");
-      heatTwo.removeAttribute("hidden");
-      heatThree.removeAttribute("hidden");
-      heatFour.removeAttribute("hidden");
-      secretOne.play();
+  //? Evening Images
+  const nightImage = document.querySelector("#nightCycle");
+  const nightImageTwo = document.querySelector("#nightCycleTwo");
 
-    }else if(currentTime >= 14 && currentTime < 18) {
-      backgroundImageURL = earthImage; //? Afternoon Image
-      earthImage.removeAttribute("hidden");
-      earthImageTwo.removeAttribute("hidden");
-      goodAfternoon.play();
+  let backgroundImageURL;
+// #endregion
 
-    } else if(currentTime >= 18 && currentTime < 19) {
-      backgroundImageURL = dealer; //? Secret Song Two
-      dealer.removeAttribute("hidden");
-      dealerTwo.removeAttribute("hidden");
-      dealerThree.removeAttribute("hidden");
-      secretTwo.play();
+  
+  if (currentTime >= 6 && currentTime < 11) {
+    backgroundImageURL = sunnyImage; //? Time's Scar (Morning)
+    sunnyImage.removeAttribute("hidden");
+    sunnyImageTwo.removeAttribute("hidden");
+    goodMorning.play();
 
-    }else {
-        backgroundImageURL = nightImage; //? Nighttime image
-        nightImage.removeAttribute("hidden");
-        nightImageTwo.removeAttribute("hidden");
-        goodEvening.play();
-    }
+  } else if(currentTime >= 11 && currentTime < 13) {
+    // backgroundImageURL = heatOne; //? Soft Museum
+    // heatOne.removeAttribute("hidden");
+    // heatTwo.removeAttribute("hidden");
+    // heatThree.removeAttribute("hidden");
+    // heatFour.removeAttribute("hidden");
+    softMuseum.play();
 
+  }else if(currentTime >= 13 && currentTime < 15) {
+    backgroundImageURL = heatOne; //? HEAT is on!
+    heatOne.removeAttribute("hidden");
+    heatTwo.removeAttribute("hidden");
+    heatThree.removeAttribute("hidden");
+    heatFour.removeAttribute("hidden");
+    secretOne.play();
+
+  }else if(currentTime >= 15 && currentTime < 17) {
+    backgroundImageURL = earthImage; //? Yaschas Massif (Afternoon)
+    earthImage.removeAttribute("hidden");
+    earthImageTwo.removeAttribute("hidden");
+    goodAfternoon.play();
+
+  } else if(currentTime >= 17 && currentTime < 19) {
+    // backgroundImageURL = dealer; //? Gratia Mundi
+    // dealer.removeAttribute("hidden");
+    // dealerTwo.removeAttribute("hidden");
+    // dealerThree.removeAttribute("hidden");
+    // dealerFour.removeAttribute("hidden");
+    // milkyWay.style.visibility = 'hidden';
+    gratia.play();
+
+  }else if(currentTime >= 19 && currentTime < 20) {
+    // backgroundImageURL = dealer; //? Tetris 
+    // dealer.removeAttribute("hidden");
+    // dealerTwo.removeAttribute("hidden");
+    // dealerThree.removeAttribute("hidden");
+    // dealerFour.removeAttribute("hidden");
+    // milkyWay.style.visibility = 'hidden';
+    puzzles.play();
+
+  }else if(currentTime >= 20 && currentTime < 21) {
+    backgroundImageURL = dealer; //? Weapon's Dealer
+    dealer.removeAttribute("hidden");
+    dealerTwo.removeAttribute("hidden");
+    dealerThree.removeAttribute("hidden");
+    dealerFour.removeAttribute("hidden");
+    milkyWay.style.visibility = 'hidden';
+    secretTwo.play();
+
+  }else if(currentTime >= 21 && currentTime < 23) {
+    backgroundImageURL = risette; //? Risette 
+    risette.removeAttribute("hidden");
+    risetteTwo.removeAttribute("hidden");
+    risetteThree.removeAttribute("hidden");
+    milkyWay.style.visibility = 'hidden';
+    risetteSong.play();
+
+  }else {
+      backgroundImageURL = nightImage; //? Destiny Island (Evening)
+      nightImage.removeAttribute("hidden");
+      nightImageTwo.removeAttribute("hidden");
+      goodEvening.play();
+  }
+  
 }
 
 yourLocationWeather.addEventListener("click", getWeather);

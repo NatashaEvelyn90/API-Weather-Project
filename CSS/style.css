@@ -52,7 +52,7 @@ body {
 }
 /* #endregion */
 
-/*? Secret One Backgrounds  */
+/*? HEAT Backgrounds  */
 /* #region */
 .heatBackgroundImg {
 margin: 0px;
@@ -105,33 +105,62 @@ z-index: 0;
 }
 /* #endregion */
 
-/*? Secret Two Background  */
+/*? Weapon's Dealer Background  */
 /* #region */
 .weaponDealer {
     margin: 0px;
     position: fixed;
     width: 100%;
+    height: -webkit-fill-available;
     z-index: -1;
     filter: brightness(0.5);
 }
 
 .personaLogo {
 width: 23%;
+height: -webkit-fill-available;
     position: fixed;
     top: 75%;
-    left: -14%;
+    left: -3%;
     z-index: 1;
 }
 
 .personaLogoTwo {
 width: 23%;
+height: -webkit-fill-available;
     position: fixed;
     top: 75%;
-    left: -13%;
+    left: -3%;
     filter: blur(10px) brightness(0.4) drop-shadow(10px 10px 10px darkred);
     animation: heat 2s ease 0s infinite normal none;
 }
 /* #endregion */
+
+/*? Risette  */
+
+.personaFourBackground {
+        margin: 0px;
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+}
+
+.risette {
+margin: 0px;
+    position: fixed;
+    width: 40%;
+    left: 69%;
+}
+
+.risetteTwo {
+margin: 0px;
+    position: fixed;
+    width: 40%;
+    left: 65%;
+    z-index: -1;
+    filter: blur(20px) brightness(0.2) drop-shadow(10px 10px 10px red);
+    animation: riseShadow 460ms ease 0s infinite normal none;
+}
 
 /*? Evening Backgrounds  */
 /* #region */
@@ -202,6 +231,20 @@ width: 23%;
 	transform: scale(1);
   }
 }
+
+@keyframes riseShadow {
+  0% {
+	transform: scale(1);
+  }
+
+  50% {
+	transform: scale(1.1);
+  }
+
+  100% {
+	transform: scale(1);
+  }
+}
 /* #endregion */
 
 /*! Main Menu section  */
@@ -211,13 +254,13 @@ width: 23%;
     width: 100%;
 }
 
-.mainMenuTwo {
+/* .mainMenuTwo {
 
 }
 
 .mainMenuThree {
 
-}
+} */
 
 li {
     list-style-type: none;
@@ -250,7 +293,7 @@ a {
     font-weight: 500;
 }
 
-.mainTitleHeat {
+/* .mainTitleHeat {
     
 }
 
@@ -260,7 +303,7 @@ a {
 
 .mainTitleArms {
 
-}
+} */
 
 .mainTitleEvening {
     color: rgb(106, 106, 196);
@@ -323,17 +366,16 @@ h2 {
 }
 
 h3 {
-color: yellow;
-text-align: center;
-margin-top: 15px;
-margin-bottom: 25px;
-font-size: x-large;
+    color: yellow;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 25px;
+    font-size: x-large;
 }
 
 img {
     width: 150px;
     border-radius: 10px;
-    margin-left: 130px;
     margin-bottom: 15px;
 }
 
@@ -341,6 +383,7 @@ p {
     color: red;
     text-align: center;
     font-size: larger;
+    width: 70%;
 }
 
 p:nth-child(odd) {
@@ -355,6 +398,11 @@ margin-left: 60px;
 background-color: rgba(0, 0, 0, 0.815);
 border-radius: 16px;
 border: 10px solid black;
+display: flex;
+flex-wrap: wrap;
+justify-content: flex-start;
+flex-direction: column;
+align-items: center;
 }
 
 .strongTemperature {
@@ -395,44 +443,58 @@ color: rgb(106, 106, 196);
 
 
 @media only screen and (max-width: 686px) {
-    a {
-        padding: 0px;
-    }
+a {
+    padding: 0px;
+}
 
-    .mainTitle {
-        font-size: 63px;
-    }
+.mainTitle {
+    font-size: 63px;
+}
 
-    .sunnyBackground,
-    .sunnyBackgroundTwo, 
-    .earthBackground, 
-    .earthBackgroundTwo, 
-    .nightBackground, 
-    .nightBackgroundTwo {
-        visibility: hidden;
-    }
 
-    .inputDesign {
-        width: 70%;
-    }
 
-    .zipCode {
-        justify-content: center;
-    }
+.sunnyBackground,
+.sunnyBackgroundTwo, 
+.earthBackground, 
+.earthBackgroundTwo, 
+.nightBackground, 
+.nightBackgroundTwo,
+.mainMenu,
+.personaLogo,
+.personaLogoTwo {
+    visibility: hidden;
+}
 
-    div {
-        width: 297px;
-        margin-left: 0px;
-    }
+.weaponDealerTwo {
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: -webkit-fill-available;
+    z-index: -1;
+    filter: brightness(0.5);
+}
 
-    img {
-        width: 50%;
-        border-radius: 10px;
-        margin-left: 70px;
-        margin-bottom: 15px;
-    }
+.inputDesign {
+    width: 70%;
+}
 
-    .foot {
-        justify-content: space-evenly;
-    }
+.zipCode {
+    justify-content: center;
+}
+
+div {
+    width: 297px;
+    margin-left: 0px;
+}
+
+img {
+    width: 50%;
+    border-radius: 10px;
+    margin-left: 70px;
+    margin-bottom: 15px;
+}
+
+.foot {
+    justify-content: space-evenly;
+}
 }
