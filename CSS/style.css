@@ -139,25 +139,29 @@ height: -webkit-fill-available;
 /*? Risette  */
 
 .personaFourBackground {
-        margin: 0px;
+    margin: 0px;
     position: fixed;
     width: 100%;
-    z-index: -1;
+    height: -webkit-fill-available;
+    z-index: -3;
 }
 
 .risette {
-margin: 0px;
+    margin: 0px;
     position: fixed;
-    width: 40%;
-    left: 69%;
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    left: 76%;
+    z-index: -1;
 }
 
 .risetteTwo {
-margin: 0px;
+    margin: 0px;
     position: fixed;
     width: 40%;
-    left: 65%;
-    z-index: -1;
+    height: -webkit-fill-available;
+    left: 61%;
+    z-index: -2;
     filter: blur(20px) brightness(0.2) drop-shadow(10px 10px 10px red);
     animation: riseShadow 460ms ease 0s infinite normal none;
 }
@@ -461,11 +465,22 @@ a {
 .nightBackgroundTwo,
 .mainMenu,
 .personaLogo,
-.personaLogoTwo {
+.personaLogoTwo,
+.risette,
+.risetteTwo {
     visibility: hidden;
 }
 
 .weaponDealerTwo {
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: -webkit-fill-available;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+.personaFourBackgroundTwo {
     margin: 0px;
     position: fixed;
     width: 100%;

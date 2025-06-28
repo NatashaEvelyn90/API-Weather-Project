@@ -9,7 +9,7 @@ const goodAfternoon = document.getElementById("afternoonTheme");
 const gratia = document.getElementById("fifteenSong");
 const puzzles = document.getElementById("tetrisTheme")
 const secretTwo = document.getElementById("secretSongTwo");
-const risetteSong = document.getElementById("thatSongstress")
+const rizSong = document.getElementById("thatSongstress");
 const goodEvening = document.getElementById("eveningTheme");
 // #endregion
 
@@ -48,6 +48,7 @@ function backgroundTime() {
   const risette = document.querySelector("#personaBackground");
   const risetteTwo = document.querySelector("#songstress");
   const risetteThree = document.querySelector("#songstressTwo")
+  const risetteFour = document.querySelector("#personaBackgroundTwo")
 
   //? Evening Images
   const nightImage = document.querySelector("#nightCycle");
@@ -112,13 +113,14 @@ function backgroundTime() {
     milkyWay.style.visibility = 'hidden';
     secretTwo.play();
 
-  }else if(currentTime >= 21 && currentTime < 23) {
+  }else if(currentTime >= 21 && currentTime < 22) {
     backgroundImageURL = risette; //? Risette 
     risette.removeAttribute("hidden");
     risetteTwo.removeAttribute("hidden");
     risetteThree.removeAttribute("hidden");
+    risetteFour.removeAttribute("hidden");
     milkyWay.style.visibility = 'hidden';
-    risetteSong.play();
+    rizSong.play();
 
   }else {
       backgroundImageURL = nightImage; //? Destiny Island (Evening)
