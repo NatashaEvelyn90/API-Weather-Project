@@ -1,7 +1,9 @@
 body {
     background-color: black;
 }
-    
+ 
+/*TODO Button style for GO & PAUSE  */
+/* #region */
 .btnGradient {
     margin: 10px;
     padding: 15px;
@@ -19,8 +21,9 @@ body {
         text-decoration: none;
     }
 }
+/* #endregion */
 
-/*! Image + Backgrounds begin  */
+/*? Image + Backgrounds begin  */
 /* #region */
 .starMap {
     position: fixed;
@@ -32,7 +35,7 @@ body {
 }
 
 /*? Starlight Backgrounds  */
-
+/* #region */
 .sonicBackground {
     margin: 0px;
     position: fixed;
@@ -46,6 +49,7 @@ body {
     position: fixed;
 
 }
+/* #endregion */
 
 /*? Morning Backgrounds  */
 /* #region */
@@ -159,7 +163,7 @@ z-index: 0;
 }
 /* #endregion */
 
-/*? Gratia Background  */
+/*? Gratia Backgrounds  */
 /* #region */
 .finalFantasyBackground {
 margin: 0px;
@@ -191,7 +195,75 @@ margin: 0px;
 }
 /* #endregion  */
 
-/*? Weapon's Dealer Background  */
+/*? Tetris Backgrounds  */
+/* #region */
+.tetris {
+    position: fixed;
+    top: -30%;
+    width: 100px;
+    height: 150px;
+    z-index: -1;
+}
+
+/*? h block  */
+img.tetris:nth-of-type(1) {
+    left: 2%;
+    width: 100px;
+    height: 150px;
+    animation: tetrisFall 150s linear infinite;
+
+}
+
+/*? i block  */
+img.tetris:nth-of-type(2) {
+    left: 21%;
+    width: 50px;
+    height: 150px;
+    animation: tetrisFall 500ms linear infinite;
+}
+
+/*? j block  */
+img.tetris:nth-of-type(3) {
+    left: 40%;
+    width: 100px;
+    height: 150px;  
+    animation: tetrisFall 2s linear infinite;
+}
+
+/*? l block  */
+img.tetris:nth-of-type(4) {
+    left: 50%;
+    width: 100px;
+    height: 150px;
+    animation: tetrisFall 12s linear infinite;
+}
+
+/*? o block  */
+img.tetris:nth-of-type(5) {
+    left: 60%;
+    width: 150px;
+    height: 150px;
+    animation: tetrisFall 37s linear infinite;
+}
+
+/*? t block  */
+img.tetris:nth-of-type(6) {
+    left: 72%;
+    width: 150px;
+    height: 150px;
+    animation: tetrisFall 59s linear infinite;
+}
+
+/*? z block  */
+img.tetris:nth-of-type(7) {
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation: tetrisFall 113s linear infinite;
+}
+/* #endregion */
+
+/*? Weapon's Dealer Backgrounds  */
 /* #region */
 .weaponDealer {
     margin: 0px;
@@ -222,7 +294,7 @@ height: -webkit-fill-available;
 }
 /* #endregion */
 
-/*? Risette  */
+/*? Risette Backgrounds  */
 /* #region */
 .personaFourBackground {
     margin: 0px;
@@ -278,6 +350,8 @@ height: -webkit-fill-available;
 
 /*! Animations  */
 /* #region */
+/** For the Sun, Earth and Moon Animation */
+/* #region */
 @keyframes planetPulse {
   0% {
 	opacity: 0.8;
@@ -294,7 +368,10 @@ height: -webkit-fill-available;
 	transform: scale(2.2);
   }
 }
+/* #endregion */
 
+/** Heat Animation  */
+/* #region */
 @keyframes heat {
   0% {
 	animation-timing-function: ease-out;
@@ -322,7 +399,10 @@ height: -webkit-fill-available;
 	transform: scale(1);
   }
 }
+/* #endregion */
 
+/** Rise's Shadow Animation  */
+/* #region */
 @keyframes riseShadow {
   0% {
 	transform: scale(1);
@@ -336,7 +416,10 @@ height: -webkit-fill-available;
 	transform: scale(1);
   }
 }
+/* #endregion */
 
+/** Night's Animations  */
+/* #region */
 @keyframes nightTwinkle {
   0% {
 	opacity: 0.8;
@@ -367,7 +450,10 @@ height: -webkit-fill-available;
 	opacity: 1;
   }
 }
+/* #endregion */
 
+/** FFVX Animation  */
+/* #region */
 @keyframes gratia {
   0% {
 	opacity: 0.8;
@@ -386,20 +472,26 @@ height: -webkit-fill-available;
 }
 /* #endregion */
 
-/*! Main Menu section  */
+/** Tetris Animation  */
+/* #region */
+@keyframes tetrisFall {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(70em); /* Adjust the value for desired falling distance */
+  }
+}
+/* #endregion */
+
+/* #endregion */
+
+/** Main Menu Header section  */
 /* #region */
 .mainMenu {
     background-color: rgba(0, 0, 0, 0.63);
     width: 100%;
 }
-
-/* .mainMenuTwo {
-
-}
-
-.mainMenuThree {
-
-} */
 
 li {
     list-style-type: none;
@@ -423,7 +515,7 @@ a {
 }
 /* #endregion */
 
-/*! "Your Local Weather" Section  */
+/*TODO "Your Local Weather" Section  */
 /* #region */
 .mainTitle {
     color: rgb(106, 106, 196);
@@ -438,12 +530,9 @@ a {
     text-shadow: 20px 17px 6px black;
 }
 /* #endregion */
-.mainInfo {
-    /* padding-bottom: 30px; */
-    padding-left: 0px;
-    margin-bottom: 0px;
-}
 
+/*? This is the zip-code input box  */
+/* #region */
 .inputDesign {
     background-color: rgba(0, 0, 0, 0.63);
     color: snow;
@@ -453,15 +542,10 @@ a {
     font-size: 20px;
     width: 15%;
 }
-/* 
-.inputDesignTwo {
-    border: 5px double orange;
-}
+/* #endregion */
 
-.inputDesignThree {
-    border: 5px double cyan;
-} */
-
+/*! This is the div section that appears  */
+/* #region */
 h2 {
     color: rgb(106, 106, 196);
     text-align: center;
@@ -523,22 +607,14 @@ color: rgb(106, 106, 196);
     font-style: italic;
     text-shadow: 20px 10px 4px black;
 }
+/* #endregion */
 
-/* .strongTwo {
-
-}
-
-.strongThree {
-
-} */
-
-/*TODO FOOTER  */
+/** FOOTER  */
 /* #region */
 .foot {
 background-color: rgba(0, 0, 0, 0.63);
 height: 100px;
 color: rgb(106, 106, 196);
-/* position: fixed; */
 }
 
 .disclaimer {
@@ -547,7 +623,7 @@ color: rgb(106, 106, 196);
 }
 /* #endregion */
 
-/*! START OF SMALL SECTION  */
+/*? START OF SMALL SECTION  */
 /* #region */
 @media only screen and (max-width: 686px) {
 a {
@@ -648,7 +724,7 @@ img {
 }
 
 .foot {
-    justify-content: space-evenly;
+    justify-content: center;
     height: -webkit-fill-available;
 }
 

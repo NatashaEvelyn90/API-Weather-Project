@@ -14,6 +14,26 @@ const puzzles = document.getElementById("tetrisTheme");
 const secretTwo = document.getElementById("secretSongTwo");
 const rizSong = document.getElementById("thatSongstress");
 const goodEvening = document.getElementById("eveningTheme");
+
+const pauseBtn = document.getElementById("pauseMusic")
+const playingSongs = document.getElementById("songChoices")
+
+pauseBtn.addEventListener("click", function () {
+    const audioElements = document.querySelectorAll(".musicPlayer audio");
+    let isPaused = true;
+
+    audioElements.forEach(audio => {
+      if (!audio.paused) {
+        audio.pause();
+        isPaused = true;
+      } else if (audio.currentTime > 0 && audio.currentTime < audio.duration) {
+        audio.play();
+        isPaused = false;
+      }
+    });
+
+    pauseBtn.textContent = isPaused ? "Play" : "Pause";
+  });
 // #endregion
 
 //TODO This starts the time section
@@ -53,6 +73,13 @@ function backgroundTime() {
   const noctisThree = document.querySelector("#ringTwo");
   
   //! Tetris Images 
+  const blockOne = document.querySelector("#shapes")  
+  const blockTwo = document.querySelector("#shapesOne")
+  const blockThree = document.querySelector("#shapesTwo")
+  const blockFour = document.querySelector("#shapesThree")
+  const blockFive = document.querySelector("#shapesFour")
+  const blockSix = document.querySelector("#shapesFive")
+  const blockSeven = document.querySelector("#shapesSix")  
 
   //? Arms Dealer
   const dealer = document.querySelector("#persona");
@@ -118,12 +145,14 @@ function backgroundTime() {
     gratia.play();
 
   }else if(currentTime >= 19 && currentTime < 20) {
-    // backgroundImageURL = dealer; //? Tetris 
-    // dealer.removeAttribute("hidden");
-    // dealerTwo.removeAttribute("hidden");
-    // dealerThree.removeAttribute("hidden");
-    // dealerFour.removeAttribute("hidden");
-    // milkyWay.style.visibility = 'hidden';
+    blockOne.removeAttribute("hidden");
+    blockTwo.removeAttribute("hidden");
+    blockThree.removeAttribute("hidden");
+    blockFour.removeAttribute("hidden");
+    blockFive.removeAttribute("hidden");
+    blockSix.removeAttribute("hidden");
+    blockSeven.removeAttribute("hidden");
+    milkyWay.style.visibility = 'hidden';
     puzzles.play();
 
   }else if(currentTime >= 20 && currentTime < 21) {
@@ -158,7 +187,8 @@ function backgroundTime() {
 yourLocationWeather.addEventListener("click", getWeather);
 function getWeather() {
   backgroundTime();
-  information.style.visibility = 'hidden';
+  bottomFoot.style.justifyContent = 'center';
+  information.style.display ='none';
   
   const zip = document.getElementById('zipCode').value;
   const geoUrl = `https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=USA&format=json`;
