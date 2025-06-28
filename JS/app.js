@@ -1,4 +1,6 @@
 const yourLocationWeather = document.getElementById("weatherUpdate");
+const bottomFoot = document.getElementById("footEr");
+const information = document.getElementById("disclaimerInfo")
 
 //* Background Music
 // #region
@@ -14,20 +16,16 @@ const rizSong = document.getElementById("thatSongstress");
 const goodEvening = document.getElementById("eveningTheme");
 // #endregion
 
-const bottomFoot = document.getElementById("footEr")
-
-
+//TODO This starts the time section
 function backgroundTime() {
   const currentTime = new Date().getHours();
-
   //! Images
   // #region 
+  const milkyWay = document.querySelector("#ourGalaxy");
 
-  const milkyWay = document.querySelector("#ourGalaxy")
-
-  //! Starlight Images
+  //? Starlight Images
   const sonicOne = document.querySelector("#sonicStuff");
-  const sonicTwo = document.querySelector("#sonicStuffTwo")
+  const sonicTwo = document.querySelector("#sonicStuffTwo");
   const sonicThree = document.querySelector("#sonicStuffThree");
 
   //? Morning images
@@ -38,19 +36,21 @@ function backgroundTime() {
   const nights = document.querySelector("#nightsBackground");
   const nightsTwo = document.querySelector("#frontSparkles");
   const nightsThree = document.querySelector("#frontSparklesTwo");
-  const nightsFour = document.querySelector("#nightsBackgroundTwo")
+  const nightsFour = document.querySelector("#nightsBackgroundTwo");
 
   //? Heat Images 
   const heatOne = document.querySelector("#datHeat");
   const heatTwo = document.querySelector("#datHeatTwo");
   const heatThree = document.querySelector("#datHeatThree");
-  const heatFour = document.querySelector("#datHeatFour");
 
   //? Afternoon Images
   const earthImage = document.querySelector("#afternoonCycle");
   const earthImageTwo = document.querySelector("#afternoonCycleTwo");
 
-  //! Gratia Images
+  //? Gratia Images
+  const noctis = document.querySelector("#fifteen");
+  const noctisTwo = document.querySelector("#ringOne");
+  const noctisThree = document.querySelector("#ringTwo");
   
   //! Tetris Images 
 
@@ -63,8 +63,8 @@ function backgroundTime() {
   //? Risette
   const risette = document.querySelector("#personaBackground");
   const risetteTwo = document.querySelector("#songstress");
-  const risetteThree = document.querySelector("#songstressTwo")
-  const risetteFour = document.querySelector("#personaBackgroundTwo")
+  const risetteThree = document.querySelector("#songstressTwo");
+  const risetteFour = document.querySelector("#personaBackgroundTwo");
 
   //? Evening Images
   const nightImage = document.querySelector("#nightCycle");
@@ -72,8 +72,9 @@ function backgroundTime() {
 
   let backgroundImageURL;
 // #endregion
-
   
+  //! Current Time Schedule 
+  // #region
   if (currentTime >= 5 && currentTime < 6) {
     backgroundImageURL = sonicOne //? Starlight
     sonicOne.removeAttribute("hidden");
@@ -100,7 +101,6 @@ function backgroundTime() {
     heatOne.removeAttribute("hidden");
     heatTwo.removeAttribute("hidden");
     heatThree.removeAttribute("hidden");
-    heatFour.removeAttribute("hidden");
     secretOne.play();
 
   }else if(currentTime >= 15 && currentTime < 17) {
@@ -110,12 +110,11 @@ function backgroundTime() {
     goodAfternoon.play();
 
   } else if(currentTime >= 17 && currentTime < 19) {
-    // backgroundImageURL = dealer; //? Gratia Mundi
-    // dealer.removeAttribute("hidden");
-    // dealerTwo.removeAttribute("hidden");
-    // dealerThree.removeAttribute("hidden");
-    // dealerFour.removeAttribute("hidden");
-    // milkyWay.style.visibility = 'hidden';
+    backgroundImageURL = noctis; //? Gratia Mundi
+    noctis.removeAttribute("hidden");
+    noctisTwo.removeAttribute("hidden");
+    noctisThree.removeAttribute("hidden");
+    milkyWay.style.visibility = 'hidden';
     gratia.play();
 
   }else if(currentTime >= 19 && currentTime < 20) {
@@ -151,56 +150,59 @@ function backgroundTime() {
       nightImageTwo.removeAttribute("hidden");
       goodEvening.play();
   }
+  // #endregion
   
 }
 
+//TODO This is the API weather section 
 yourLocationWeather.addEventListener("click", getWeather);
 function getWeather() {
-    backgroundTime();
-    
-    const zip = document.getElementById('zipCode').value;
-    const geoUrl = `https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=USA&format=json`;
-
-    fetch(geoUrl)
-      .then(response => response.json())
-      .then(data => {
-        if (!data.length) throw new Error('ZIP code not found');
-        const lat = data[0].lat;
-        const lon = data[0].lon;
-        return fetch(`https://api.weather.gov/points/${lat},${lon}`);
-      })
-
-      .then(response => response.json())
-      .then(data => {
-        const forecastUrl = data.properties.forecast;
-        const city = data.properties.relativeLocation.properties.city;
-        const state = data.properties.relativeLocation.properties.state;
-
-        document.getElementById('zipLocation').innerHTML = `<h2>Weather Forecast for: <strong class="strongOne">${city}, ${state}<strong></h2>`;
-        return fetch(forecastUrl);
-      })
-
-      .then(response => response.json())
-      .then(data => {
-        const forecastDiv = document.getElementById('forecast');
-        forecastDiv.innerHTML = '';
-        const periods = data.properties.periods;
-
-        periods.forEach(period => {
-          const day = document.createElement('div');
-          day.innerHTML = `
-            <h3>${period.name}</h3>
-            <img src="${period.icon}" alt="${period.shortForecast}">
-            <p><strong class="strongTemperature">Temperature:</strong> <span class="strongOne">${period.temperature}°${period.temperatureUnit}</span></p>
-            <p><strong class="strongPrediction">Predicted Forecast:</strong> <span class="strongOne">${period.shortForecast}</span></p>
-          `;
-          forecastDiv.appendChild(day);
-        });
-      })
-
-      .catch(error => {
-        document.getElementById('zipLocation').innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
-        document.getElementById('forecast').innerHTML = '';
-        console.error(error);
+  backgroundTime();
+  information.style.visibility = 'hidden';
+  
+  const zip = document.getElementById('zipCode').value;
+  const geoUrl = `https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=USA&format=json`;
+  
+  fetch(geoUrl)
+    .then(response => response.json())
+    .then(data => {
+      if (!data.length) throw new Error('ZIP code not found');
+      const lat = data[0].lat;
+      const lon = data[0].lon;
+      return fetch(`https://api.weather.gov/points/${lat},${lon}`);
+    })
+  
+    .then(response => response.json())
+    .then(data => {
+      const forecastUrl = data.properties.forecast;
+      const city = data.properties.relativeLocation.properties.city;
+      const state = data.properties.relativeLocation.properties.state;
+  
+      document.getElementById('zipLocation').innerHTML = `<h2>Weather Forecast for: <strong class="strongOne">${city}, ${state}<strong></h2>`;
+      return fetch(forecastUrl);
+    })
+  
+    .then(response => response.json())
+    .then(data => {
+      const forecastDiv = document.getElementById('forecast');
+      forecastDiv.innerHTML = '';
+      const periods = data.properties.periods;
+  
+      periods.forEach(period => {
+        const day = document.createElement('div');
+        day.innerHTML = `
+          <h3>${period.name}</h3>
+          <img src="${period.icon}" alt="${period.shortForecast}">
+          <p><strong class="strongTemperature">Temperature:</strong> <span class="strongOne">${period.temperature}°${period.temperatureUnit}</span></p>
+          <p><strong class="strongPrediction">Predicted Forecast:</strong> <span class="strongOne">${period.shortForecast}</span></p>
+        `;
+        forecastDiv.appendChild(day);
       });
-    }     
+    })
+  
+    .catch(error => {
+      document.getElementById('zipLocation').innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
+      document.getElementById('forecast').innerHTML = '';
+      console.error(error);
+    });
+}     

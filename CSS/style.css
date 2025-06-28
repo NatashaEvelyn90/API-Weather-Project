@@ -108,24 +108,28 @@ width: 100%;
 margin: 0px;
 position: fixed;
 width: 100%;
+height: -webkit-fill-available;
 z-index: -2;
+filter: brightness(0.5);
 }
 
 .heatBackgroundMain {
     margin: 0px;
 position: fixed;
-left: 80%;
+left: 83%;
 top: 43%;
 width: 20%;
+height: -webkit-fill-available;
 z-index: 1;
 }
 
 .heatBackgroundMainTwo {
     margin: 0px;
     position: fixed;
-left: 80%;
+left: 84%;
 top: 43%;
 width: 20%;
+height: -webkit-fill-available;
 z-index: 0;
     filter: blur(10px) drop-shadow(10px 10px 10px red);
     animation: heat 2s ease 0s infinite normal none;
@@ -154,6 +158,38 @@ z-index: 0;
 
 }
 /* #endregion */
+
+/*? Gratia Background  */
+/* #region */
+.finalFantasyBackground {
+margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: -webkit-fill-available;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
+.finalFantasyRing {
+margin: 0px;
+    position: fixed;
+    top: 86%;
+    left: 89%;
+    height: -webkit-fill-available;
+    /* filter: drop-shadow(0px 3px 6px white); */
+}
+
+.finalFantasyRingTwo {
+margin: 0px;
+    position: fixed;
+    top: 85%;
+    left: 89%;
+    z-index: -1;
+    height: -webkit-fill-available;
+    filter: blur(5px) brightness(20) drop-shadow(20px 20px 20px purple);
+    animation: gratia 5s ease 0s infinite normal none;
+}
+/* #endregion  */
 
 /*? Weapon's Dealer Background  */
 /* #region */
@@ -331,6 +367,23 @@ height: -webkit-fill-available;
 	opacity: 1;
   }
 }
+
+@keyframes gratia {
+  0% {
+	opacity: 0.8;
+	transform: scale(0.2);
+  }
+
+  80% {
+	opacity: 0;
+	transform: scale(1.2);
+  }
+
+  100% {
+	opacity: 0;
+	transform: scale(2.2);
+  }
+}
 /* #endregion */
 
 /*! Main Menu section  */
@@ -372,38 +425,11 @@ a {
 
 /*! "Your Local Weather" Section  */
 /* #region */
-.mainTitleMorning {
+.mainTitle {
     color: rgb(106, 106, 196);
     font-size: 70px;
     font-family: "Koh Santepheap", serif;
     font-weight: 500;
-}
-
-/* .mainTitleHeat {
-    
-}
-
-.maintTitleAfternoon {
-
-}
-
-.mainTitleArms {
-
-} */
-
-.mainTitleEvening {
-    color: rgb(106, 106, 196);
-    font-size: 70px;
-    font-family: "Koh Santepheap", serif;
-    font-weight: 500;
-}
-
-.mainTitleMorningTwo {
-    color: orange;
-}
-
-.mainTitleMorningThree {
-    color: cyan;
 }
 
 .titleWeather {
@@ -411,13 +437,6 @@ a {
     font-style: italic;
     text-shadow: 20px 17px 6px black;
 }
-/* .titleWeatherTwo {
-    color: ;
-}
-.titleWeatherThree {
-
-} */
-
 /* #endregion */
 .mainInfo {
     /* padding-bottom: 30px; */
@@ -434,14 +453,14 @@ a {
     font-size: 20px;
     width: 15%;
 }
-
+/* 
 .inputDesignTwo {
     border: 5px double orange;
 }
 
 .inputDesignThree {
     border: 5px double cyan;
-}
+} */
 
 h2 {
     color: rgb(106, 106, 196);
@@ -513,7 +532,7 @@ color: rgb(106, 106, 196);
 
 } */
 
-/*! FOOTER  */
+/*TODO FOOTER  */
 /* #region */
 .foot {
 background-color: rgba(0, 0, 0, 0.63);
@@ -522,12 +541,14 @@ color: rgb(106, 106, 196);
 /* position: fixed; */
 }
 
-.heatDancing {
-    margin: 0px;
+.disclaimer {
+    color: red;
+    margin-left: 30px;
 }
 /* #endregion */
 
-
+/*! START OF SMALL SECTION  */
+/* #region */
 @media only screen and (max-width: 686px) {
 a {
     padding: 0px;
@@ -537,14 +558,14 @@ a {
     font-size: 63px;
 }
 
-
-
 .sunnyBackground,
 .sunnyBackgroundTwo, 
 .earthBackground, 
 .earthBackgroundTwo, 
 .nightBackground, 
 .nightBackgroundTwo,
+.heatBackgroundMain,
+.heatBackgroundMainTwo,
 .mainMenu,
 .personaLogo,
 .personaLogoTwo,
@@ -628,5 +649,14 @@ img {
 
 .foot {
     justify-content: space-evenly;
+    height: -webkit-fill-available;
+}
+
+.disclaimer {
+    color: red;
+    margin-left: 5px;
+    width: 87%;
+    font-size: smaller;
 }
 }
+/* #endregion */
