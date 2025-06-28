@@ -31,6 +31,22 @@ body {
     opacity: .7;
 }
 
+/*? Starlight Backgrounds  */
+
+.sonicBackground {
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: -webkit-fill-available;
+    z-index: -1;
+}
+
+.goldRing {
+    margin: 0px;
+    position: fixed;
+
+}
+
 /*? Morning Backgrounds  */
 /* #region */
 .sunnyBackground {
@@ -49,6 +65,40 @@ body {
     z-index: -2; 
     filter: blur(50px) brightness(2.2);
     animation: planetPulse 5s ease 0s infinite normal none;
+}
+/* #endregion */
+
+/*? Night's Backgrounds  */
+/* #region */
+.nightsWallpaper {
+    margin: 0px;
+width: 100%;
+    position: fixed;
+    height: -webkit-fill-available;
+    z-index: -3;
+}
+
+
+.sparklyStars {
+    margin: 0px;
+width: 100%;
+    height: -webkit-fill-available;
+    position: fixed;
+    z-index: -1;
+    filter: drop-shadow(260px 85px 2px snow);
+    animation: nightTwinkleTwo 2s ease 0s infinite normal none;
+}
+
+.sparklyStarsTwo {
+    margin: 0px;
+width: 100%;
+    height: -webkit-fill-available;
+    position: fixed;
+    top: 34%;
+    left: 47%;
+    z-index: -2;
+    filter: brightness(2) drop-shadow(260px 85px 2px snow);
+    animation: nightTwinkle 10s ease 0s infinite normal none;
 }
 /* #endregion */
 
@@ -137,7 +187,7 @@ height: -webkit-fill-available;
 /* #endregion */
 
 /*? Risette  */
-
+/* #region */
 .personaFourBackground {
     margin: 0px;
     position: fixed;
@@ -165,6 +215,7 @@ height: -webkit-fill-available;
     filter: blur(20px) brightness(0.2) drop-shadow(10px 10px 10px red);
     animation: riseShadow 460ms ease 0s infinite normal none;
 }
+/* #endregion */
 
 /*? Evening Backgrounds  */
 /* #region */
@@ -247,6 +298,37 @@ height: -webkit-fill-available;
 
   100% {
 	transform: scale(1);
+  }
+}
+
+@keyframes nightTwinkle {
+  0% {
+	opacity: 0.8;
+	transform: scale(0.2);
+  }
+
+  80% {
+	opacity: 0;
+	transform: scale(1.2);
+  }
+
+  100% {
+	opacity: 0;
+	transform: scale(2.2);
+  }
+}
+
+@keyframes nightTwinkleTwo {
+  0% {
+	opacity: 1;
+  }
+
+  50% {
+	opacity: 0.2;
+  }
+
+  100% {
+	opacity: 1;
   }
 }
 /* #endregion */
@@ -467,8 +549,24 @@ a {
 .personaLogo,
 .personaLogoTwo,
 .risette,
-.risetteTwo {
+.risetteTwo,
+.sparklyStars {
     visibility: hidden;
+}
+
+.goldRing {
+    margin: 0px;
+    position: fixed;
+    top: 78%;
+    width: 20%;
+}
+
+.goldRingTwo {
+    margin: 0px;
+    position: fixed;
+    top: 78%;
+    left: 80%;
+    width: 20%;
 }
 
 .weaponDealerTwo {
@@ -478,6 +576,26 @@ a {
     height: -webkit-fill-available;
     z-index: -1;
     filter: brightness(0.5);
+}
+
+.nightsWallpaperTwo {
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: -webkit-fill-available;
+    z-index: -1;
+}
+
+.sparklyStarsTwo {
+    margin: 0px;
+width: 100%;
+    height: -webkit-fill-available;
+    position: fixed;
+    top: 34%;
+    left: -2%;
+    z-index: 0;
+    filter: brightness(2) drop-shadow(260px 85px 2px snow);
+    animation: nightTwinkle 10s ease 0s infinite normal none;
 }
 
 .personaFourBackgroundTwo {
@@ -505,7 +623,6 @@ div {
 img {
     width: 50%;
     border-radius: 10px;
-    margin-left: 70px;
     margin-bottom: 15px;
 }
 

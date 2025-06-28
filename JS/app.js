@@ -2,12 +2,13 @@ const yourLocationWeather = document.getElementById("weatherUpdate");
 
 //* Background Music
 // #region
+const starrySong = document.getElementById("sonicStars");
 const goodMorning = document.getElementById("morningTheme");
 const softMuseum = document.getElementById("softMuseumSong");
 const secretOne = document.getElementById("secretSongOne");
 const goodAfternoon = document.getElementById("afternoonTheme");
 const gratia = document.getElementById("fifteenSong");
-const puzzles = document.getElementById("tetrisTheme")
+const puzzles = document.getElementById("tetrisTheme");
 const secretTwo = document.getElementById("secretSongTwo");
 const rizSong = document.getElementById("thatSongstress");
 const goodEvening = document.getElementById("eveningTheme");
@@ -24,9 +25,20 @@ function backgroundTime() {
 
   const milkyWay = document.querySelector("#ourGalaxy")
 
+  //! Starlight Images
+  const sonicOne = document.querySelector("#sonicStuff");
+  const sonicTwo = document.querySelector("#sonicStuffTwo")
+  const sonicThree = document.querySelector("#sonicStuffThree");
+
   //? Morning images
   const sunnyImage = document.querySelector("#dayCycle");
   const sunnyImageTwo = document.querySelector("#dayCycleTwo");
+
+  //? Soft Museum Images
+  const nights = document.querySelector("#nightsBackground");
+  const nightsTwo = document.querySelector("#frontSparkles");
+  const nightsThree = document.querySelector("#frontSparklesTwo");
+  const nightsFour = document.querySelector("#nightsBackgroundTwo")
 
   //? Heat Images 
   const heatOne = document.querySelector("#datHeat");
@@ -37,6 +49,10 @@ function backgroundTime() {
   //? Afternoon Images
   const earthImage = document.querySelector("#afternoonCycle");
   const earthImageTwo = document.querySelector("#afternoonCycleTwo");
+
+  //! Gratia Images
+  
+  //! Tetris Images 
 
   //? Arms Dealer
   const dealer = document.querySelector("#persona");
@@ -58,18 +74,25 @@ function backgroundTime() {
 // #endregion
 
   
-  if (currentTime >= 6 && currentTime < 11) {
+  if (currentTime >= 5 && currentTime < 6) {
+    backgroundImageURL = sonicOne //? Starlight
+    sonicOne.removeAttribute("hidden");
+    sonicTwo.removeAttribute("hidden");
+    sonicThree.removeAttribute("hidden");
+    starrySong.play();
+
+  }else if(currentTime >= 6 && currentTime < 11) {
     backgroundImageURL = sunnyImage; //? Time's Scar (Morning)
     sunnyImage.removeAttribute("hidden");
     sunnyImageTwo.removeAttribute("hidden");
     goodMorning.play();
 
-  } else if(currentTime >= 11 && currentTime < 13) {
-    // backgroundImageURL = heatOne; //? Soft Museum
-    // heatOne.removeAttribute("hidden");
-    // heatTwo.removeAttribute("hidden");
-    // heatThree.removeAttribute("hidden");
-    // heatFour.removeAttribute("hidden");
+  }else if(currentTime >= 11 && currentTime < 13) {
+    backgroundImageURL = nights; //? Soft Museum
+    nights.removeAttribute("hidden");
+    nightsTwo.removeAttribute("hidden");
+    nightsThree.removeAttribute("hidden");
+    nightsFour.removeAttribute("hidden");
     softMuseum.play();
 
   }else if(currentTime >= 13 && currentTime < 15) {

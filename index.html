@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./CSS/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <title>Your Weather</title>
 </head>
 <body>
@@ -17,12 +17,24 @@
         <!--? Milky Way background image  -->
         <img src="./MEDIA/starmap_random_2020_4k_gal_print.jpg" alt="starmap" class="starMap" id="ourGalaxy">
 
+        <!--! Starlight section -->
+        <img src="./MEDIA/blue light.jpg" alt="blue light" class="sonicBackground" id="sonicStuff" hidden>
+        <img src="./MEDIA/gold ring.gif" alt="sonic gold ring" class="goldRing" id="sonicStuffTwo" hidden>
+        <!--! This is for the smaller screens  -->
+        <img src="./MEDIA/gold ring.gif" alt="sonic gold ring" class="goldRingTwo d-sm-none" id="sonicStuffThree" hidden>
+
+
+
         <!--? Time's Scar section (Morning)  -->
         <img src="./MEDIA/picture-of-real-sun-the-color-of-fire-red-21.png" alt="sun" class="sunnyBackground" id="dayCycle" hidden>
         <img src="./MEDIA/picture-of-real-sun-the-color-of-fire-red-21.png" alt="sun" class="sunnyBackgroundTwo" id="dayCycleTwo" hidden>
 
-        <!--! Soft Museum section  -->
-        
+        <!--? Soft Museum section  -->
+        <img src="./MEDIA/nightsintodreams.jpg" alt="character Nights in front of the moon" class="nightsWallpaper" id="nightsBackground" hidden>
+        <img src="./MEDIA/image-from-rawpixel-id-6243965-png.png" alt="sparkly stars" class="sparklyStars" id="frontSparkles" hidden>
+        <img src="./MEDIA/image-from-rawpixel-id-6243965-png.png" alt="sparkly stars" class="sparklyStarsTwo" id="frontSparklesTwo" hidden>
+        <!--! This is for the smaller screens  -->
+        <img src="./MEDIA/moon_1400.jpg" alt="moon" class="nightsWallpaperTwo d-sm-none" id="nightsBackgroundTwo" hidden>
 
         <!--? Heat section  -->
         <img src="./MEDIA/cool fire.jpeg" alt="bust a groove game" class="heatBackgroundImg" id="datHeat" hidden>
@@ -79,6 +91,7 @@
             <input type="text" id="zipCode" placeholder="Enter Zip Location" class="inputDesign">
             <button id="weatherUpdate" class="btnGradient">GO</button>
         </span>
+        <span class="helloGreetings" id="manyGreetings"></span>
         <!--#endregion -->
     
         <!--? City and Weather  -->
@@ -89,15 +102,27 @@
     </main>
     <footer class="foot d-flex align-items-center" id="footEr">
         <span class="musicPlayer">
-            <audio src="./MEDIA/101 Chrono Cross ~ Time's Scar.mp3" id="morningTheme" hidden loop></audio>
-            <audio src="./MEDIA/18 Soft Museum - Suburban Museum [Happy].mp3" id="softMuseumSong" hidden loop></audio>
-            <audio src="./MEDIA/The Heat is ON!.mp3" id="secretSongOne" hidden loop></audio>
-            <audio src="./MEDIA/405 - Masashi Hamauzu - The Yaschas Massif.mp3" id="afternoonTheme" hidden loop></audio>
-            <audio src="./MEDIA/Final Fantasy XV OST- Gratia Mundi.mp3" id="fifteenSong" hidden loop></audio>
-            <audio src="./MEDIA/Tetris.mp3" id="tetrisTheme" hidden loop></audio>
-            <audio src="./MEDIA/Persona 5- Weapons Dealer Theme.mp3" id="secretSongTwo" hidden loop></audio>
-            <audio src="./MEDIA/2-03 Striptease.mp3" id="thatSongstress" hidden loop></audio>
+            <!--TODO 0500 - 0600  -->
+            <audio src="./MEDIA/06 - Star Light Zone.mp3" id="sonicStars" hidden loop></audio>
+            <!--TODO 0600 - 1100  -->
+            <audio src="./MEDIA/101 Chrono Cross ~ Time's Scar.mp3" id="morningTheme" hidden loop></audio>          
+            <!--TODO 1100 - 1300  -->
+            <audio src="./MEDIA/18 Soft Museum - Suburban Museum [Happy].mp3" id="softMuseumSong" hidden loop></audio>          
+            <!--TODO 1300 - 1500  -->
+            <audio src="./MEDIA/The Heat is ON!.mp3" id="secretSongOne" hidden loop></audio>            
+            <!--TODO 1500 - 1700 -->
+            <audio src="./MEDIA/405 - Masashi Hamauzu - The Yaschas Massif.mp3" id="afternoonTheme" hidden loop></audio>           
+            <!--TODO 1700 - 1900 -->
+            <audio src="./MEDIA/Final Fantasy XV OST- Gratia Mundi.mp3" id="fifteenSong" hidden loop></audio>         
+            <!--TODO 1900 - 2000 -->
+            <audio src="./MEDIA/Tetris.mp3" id="tetrisTheme" hidden loop></audio>         
+            <!--TODO 2000 - 2100 -->
+            <audio src="./MEDIA/Persona 5- Weapons Dealer Theme.mp3" id="secretSongTwo" hidden loop></audio>         
+            <!--TODO 2100 - 2200 -->
+            <audio src="./MEDIA/2-03 Striptease.mp3" id="thatSongstress" hidden loop></audio>       
+           <!--TODO 2200 - 0500 -->
             <audio src="./MEDIA/32_Destiny_F.mp3" id="eveningTheme" hidden loop></audio>
+            
             <button class="pause btnGradient">Pause</button>
         </span>
         ALL RIGHTS RESERVED. &copy;
