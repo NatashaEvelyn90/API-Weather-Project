@@ -522,6 +522,7 @@ a {
     font-size: 70px;
     font-family: "Koh Santepheap", serif;
     font-weight: 500;
+    text-shadow: 6px 2px 1px black;
 }
 
 .titleWeather {
@@ -552,6 +553,7 @@ h2 {
     font-size: xx-large;
     margin-top: 5px;
     margin-bottom: 40px;
+    text-shadow: 6px 2px 1px black;
 }
 
 h3 {
