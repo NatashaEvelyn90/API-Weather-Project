@@ -1,6 +1,11 @@
 const yourLocationWeather = document.getElementById("weatherUpdate");
 const bottomFoot = document.getElementById("footEr");
 const information = document.getElementById("disclaimerInfo")
+const forecastDiv = document.getElementById("forecast");
+const zipLocation = document.getElementById("zipLocation");
+
+let currentIndex = 0;
+let forecastElements = [];
 
 //* Background Music
 // #region
@@ -72,7 +77,7 @@ function backgroundTime() {
   const noctisTwo = document.querySelector("#ringOne");
   const noctisThree = document.querySelector("#ringTwo");
   
-  //! Tetris Images 
+  //? Tetris Images 
   const blockOne = document.querySelector("#shapes")  
   const blockTwo = document.querySelector("#shapesOne")
   const blockThree = document.querySelector("#shapesTwo")
@@ -192,7 +197,7 @@ function getWeather() {
   
   const zip = document.getElementById('zipCode').value;
   const geoUrl = `https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=USA&format=json`;
-  
+
   fetch(geoUrl)
     .then(response => response.json())
     .then(data => {
@@ -201,24 +206,20 @@ function getWeather() {
       const lon = data[0].lon;
       return fetch(`https://api.weather.gov/points/${lat},${lon}`);
     })
-  
     .then(response => response.json())
     .then(data => {
       const forecastUrl = data.properties.forecast;
       const city = data.properties.relativeLocation.properties.city;
       const state = data.properties.relativeLocation.properties.state;
-  
-      document.getElementById('zipLocation').innerHTML = `<h2>Weather Forecast for: <strong class="strongOne">${city}, ${state}<strong></h2>`;
+      zipLocation.innerHTML = `<h2>Weather Forecast for: <strong class="strongOne">${city}, ${state}</strong></h2>`;
       return fetch(forecastUrl);
     })
-  
     .then(response => response.json())
     .then(data => {
-      const forecastDiv = document.getElementById('forecast');
-      forecastDiv.innerHTML = '';
       const periods = data.properties.periods;
-  
-      periods.forEach(period => {
+
+      // Clear existing cards
+      forecastElements = periods.map(period => {
         const day = document.createElement('div');
         day.innerHTML = `
           <h3>${period.name}</h3>
@@ -226,13 +227,41 @@ function getWeather() {
           <p><strong class="strongTemperature">Temperature:</strong> <span class="strongOne">${period.temperature}°${period.temperatureUnit}</span></p>
           <p><strong class="strongPrediction">Predicted Forecast:</strong> <span class="strongOne">${period.shortForecast}</span></p>
         `;
-        forecastDiv.appendChild(day);
+        return day;
       });
+
+      currentIndex = 0;
+      showForecastPage(currentIndex);
     })
-  
     .catch(error => {
-      document.getElementById('zipLocation').innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
-      document.getElementById('forecast').innerHTML = '';
+      zipLocation.innerHTML = `<p style="color:red;">Error: ${error.message}</p>`;
+      forecastDiv.innerHTML = '';
       console.error(error);
     });
-}     
+}
+
+function showForecastPage(index) {
+  forecastDiv.innerHTML = '';
+  const visibleItems = forecastElements.slice(index, index + 2);
+  visibleItems.forEach(el => forecastDiv.appendChild(el));
+  updateNavButtons();
+}
+
+function updateNavButtons() {
+  document.getElementById('prevBtn').disabled = currentIndex === 0;
+  document.getElementById('nextBtn').disabled = currentIndex + 2 >= forecastElements.length;
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+  if (currentIndex + 2 < forecastElements.length) {
+    currentIndex += 2;
+    showForecastPage(currentIndex);
+  }
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+  if (currentIndex - 2 >= 0) {
+    currentIndex -= 2;
+    showForecastPage(currentIndex);
+  }
+});

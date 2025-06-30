@@ -545,7 +545,7 @@ a {
 }
 /* #endregion */
 
-/*! This is the div section that appears  */
+/*TODO This is the div section that appears  */
 /* #region */
 h2 {
     color: rgb(106, 106, 196);
@@ -584,7 +584,6 @@ p:nth-child(odd) {
 
 div {
 width: 30%;
-margin-bottom: 60px;
 margin-left: 60px;
 background-color: rgba(0, 0, 0, 0.815);
 border-radius: 16px;
@@ -625,7 +624,7 @@ color: rgb(106, 106, 196);
 }
 /* #endregion */
 
-/*? START OF SMALL SECTION  */
+/*! START OF SMALL SECTION  */
 /* #region */
 @media only screen and (max-width: 686px) {
 a {
@@ -635,6 +634,7 @@ a {
 .mainTitle {
     font-size: 63px;
 }
+
 
 .sunnyBackground,
 .sunnyBackgroundTwo, 
@@ -704,6 +704,11 @@ width: 100%;
     height: -webkit-fill-available;
     z-index: -1;
     filter: brightness(0.5);
+}
+
+.navigationButtons {
+    position: relative;
+z-index: 1;
 }
 
 .inputDesign {

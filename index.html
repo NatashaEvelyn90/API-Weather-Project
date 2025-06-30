@@ -118,14 +118,21 @@
         <span class="d-flex flex-wrap align-items-center zipCode">
             <input type="text" id="zipCode" placeholder="Enter Zip Location" class="inputDesign">
             <button id="weatherUpdate" class="btnGradient">GO</button>
+            <span class="yourLocation ms-5" id="zipLocation"></span>
         </span>
         <!--#endregion -->
     
         <!--? City and Weather  -->
         <!--#region city + weather  -->
-        <span class="yourLocation" id="zipLocation"></span>
         <span class="weatherInfo container-fluid d-flex flex-wrap justify-content-center" id="forecast"></span>
-        <!--#endregion  -->
+        
+
+        <!--TODO button controls  -->
+        <span class="d-flex navigationButtons justify-content-between  mt-3">
+            <button id="prevBtn" class="btn btnGradient prevButton">Prev</button>
+            <button id="nextBtn" class="btn btnGradient nextButton">Next</button>
+        </span>
+            <!--#endregion  -->
     </main>
     <footer class="foot d-flex align-items-center" id="footEr">
         <!--? music choices  -->
