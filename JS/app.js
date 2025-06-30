@@ -3,6 +3,8 @@ const bottomFoot = document.getElementById("footEr");
 const information = document.getElementById("disclaimerInfo")
 const forecastDiv = document.getElementById("forecast");
 const zipLocation = document.getElementById("zipLocation");
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
 
 let currentIndex = 0;
 let forecastElements = [];
@@ -194,6 +196,8 @@ function getWeather() {
   backgroundTime();
   bottomFoot.style.justifyContent = 'center';
   information.style.display ='none';
+  nextBtn.removeAttribute("hidden");
+  prevBtn.removeAttribute("hidden");
   
   const zip = document.getElementById('zipCode').value;
   const geoUrl = `https://nominatim.openstreetmap.org/search?postalcode=${zip}&country=USA&format=json`;
@@ -248,8 +252,8 @@ function showForecastPage(index) {
 }
 
 function updateNavButtons() {
-  document.getElementById('prevBtn').disabled = currentIndex === 0;
-  document.getElementById('nextBtn').disabled = currentIndex + 2 >= forecastElements.length;
+  prevBtn.disabled = currentIndex === 0;
+  nextBtn.disabled = currentIndex + 2 >= forecastElements.length;
 }
 
 document.getElementById('nextBtn').addEventListener('click', () => {

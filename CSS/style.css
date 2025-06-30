@@ -553,6 +553,7 @@ h2 {
     font-size: xx-large;
     margin-top: 5px;
     margin-bottom: 40px;
+    margin-left: 120px;
     text-shadow: 6px 2px 1px black;
 }
 
@@ -574,7 +575,7 @@ p {
     color: red;
     text-align: center;
     font-size: larger;
-    width: 70%;
+    width: 75%;
 }
 
 p:nth-child(odd) {
@@ -717,6 +718,14 @@ z-index: 1;
 
 .zipCode {
     justify-content: center;
+}
+
+.weatherInfo {
+    flex-wrap: nowrap;
+}
+
+h2 {
+    margin-left: 0px;
 }
 
 div {
