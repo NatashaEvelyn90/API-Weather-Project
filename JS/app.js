@@ -44,7 +44,7 @@ pauseBtn.addEventListener("click", function () {
 // #endregion
 
 //TODO This starts the time section
-function backgroundTime() {
+function backgroundTime() {e
   const currentTime = new Date().getHours();
   //! Images
   // #region 
@@ -152,7 +152,7 @@ function backgroundTime() {
     gratia.play();
 
   }else if(currentTime >= 19 && currentTime < 20) {
-    blockOne.removeAttribute("hidden");
+    blockOne.removeAttribute("hidden"); //? Tetris
     blockTwo.removeAttribute("hidden");
     blockThree.removeAttribute("hidden");
     blockFour.removeAttribute("hidden");
