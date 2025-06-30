@@ -14,6 +14,7 @@ body {
     color: white;            
     border-radius: 10px;
     display: block;
+    z-index: 1;
     background-image: linear-gradient(to right, #000000 0%, #6a6ac4  51%, #000000  100%);
     &:hover {
         background-position: right center; /*? change the direction of the light thingy */
@@ -120,7 +121,7 @@ filter: brightness(0.5);
 .heatBackgroundMain {
     margin: 0px;
 position: fixed;
-left: 83%;
+left: 80%;
 top: 43%;
 width: 20%;
 height: -webkit-fill-available;
@@ -130,7 +131,7 @@ z-index: 1;
 .heatBackgroundMainTwo {
     margin: 0px;
     position: fixed;
-left: 84%;
+left: 81%;
 top: 43%;
 width: 20%;
 height: -webkit-fill-available;

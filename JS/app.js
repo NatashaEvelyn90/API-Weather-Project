@@ -44,7 +44,7 @@ pauseBtn.addEventListener("click", function () {
 // #endregion
 
 //TODO This starts the time section
-function backgroundTime() {e
+function backgroundTime() {
   const currentTime = new Date().getHours();
   //! Images
   // #region 
