@@ -178,32 +178,47 @@ margin: 0px;
 .finalFantasyRing {
 margin: 0px;
     position: fixed;
-    top: 86%;
-    left: 89%;
-    height: -webkit-fill-available;
-    /* filter: drop-shadow(0px 3px 6px white); */
+    /* top: 86%;
+    left: 83%; */
+    /* height: -webkit-fill-available; */
+    filter: drop-shadow(0px 3px 6px white);
+    z-index: 1;
 }
 
 .finalFantasyRingTwo {
 margin: 0px;
     position: fixed;
-    top: 85%;
-    left: 89%;
-    z-index: -1;
-    height: -webkit-fill-available;
-    filter: blur(5px) brightness(20) drop-shadow(20px 20px 20px purple);
+    /* top: 85%;
+    left: 83%; */
+    z-index: 1;
+    /* height: -webkit-fill-available; */
+    filter: blur(5px) brightness(5) drop-shadow(20px 20px 20px rgb(155, 14, 155));
     animation: gratia 5s ease 0s infinite normal none;
 }
 /* #endregion  */
 
 /*? Tetris Backgrounds  */
 /* #region */
+
+.tetrisBackground {
+    margin: 0px;
+    margin: 0px;
+    width: 100%;
+    height: -webkit-fill-available;
+    position: fixed;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
 .tetris {
     position: fixed;
     top: -30%;
-    width: 100px;
-    height: 150px;
+    left: 25%;
+    width: 150px;
+    height: 100px;
     z-index: -1;
+    animation: tetrisFall 99s linear infinite;
+    filter: brightness(0.8);
 }
 
 /*? h block  */
@@ -217,16 +232,16 @@ img.tetris:nth-of-type(1) {
 
 /*? i block  */
 img.tetris:nth-of-type(2) {
-    left: 21%;
-    width: 50px;
+    left: 2%;
+    width: 100px;
     height: 150px;
-    animation: tetrisFall 500ms linear infinite;
+    animation: tetrisFall 750ms linear infinite;
 }
 
 /*? j block  */
 img.tetris:nth-of-type(3) {
     left: 40%;
-    width: 100px;
+    width: 50px;
     height: 150px;  
     animation: tetrisFall 2s linear infinite;
 }
@@ -242,7 +257,7 @@ img.tetris:nth-of-type(4) {
 /*? o block  */
 img.tetris:nth-of-type(5) {
     left: 60%;
-    width: 150px;
+    width: 100px;
     height: 150px;
     animation: tetrisFall 37s linear infinite;
 }
@@ -257,7 +272,7 @@ img.tetris:nth-of-type(6) {
 
 /*? z block  */
 img.tetris:nth-of-type(7) {
-    left: 85%;
+    left: 77%;
     width: 150px;
     height: 150px;
     animation: tetrisFall 113s linear infinite;
@@ -531,6 +546,8 @@ a {
     font-style: italic;
     text-shadow: 20px 17px 6px black;
 }
+
+
 /* #endregion */
 
 /*? This is the zip-code input box  */
@@ -555,7 +572,7 @@ h2 {
     margin-top: 5px;
     margin-bottom: 40px;
     margin-left: 120px;
-    text-shadow: 6px 2px 1px black;
+    text-shadow: 3px 2px 1px black;
 }
 
 h3 {
@@ -573,10 +590,10 @@ img {
 }
 
 p {
+    margin-bottom: 0px;
     color: red;
     text-align: center;
-    font-size: larger;
-    width: 75%;
+    font-size: small;
 }
 
 p:nth-child(odd) {
@@ -585,7 +602,7 @@ p:nth-child(odd) {
 }
 
 div {
-width: 30%;
+width: 37%;
 margin-left: 60px;
 background-color: rgba(0, 0, 0, 0.815);
 border-radius: 16px;
@@ -616,7 +633,8 @@ color: rgb(106, 106, 196);
 /* #region */
 .foot {
 background-color: rgba(0, 0, 0, 0.63);
-height: 100px;
+width: 100%;
+height: -webkit-fill-available;
 color: rgb(106, 106, 196);
 }
 
@@ -651,7 +669,9 @@ a {
 .personaLogoTwo,
 .risette,
 .risetteTwo,
-.sparklyStars {
+.sparklyStars,
+.finalFantasyRing,
+.finalFantasyRingTwo {
     visibility: hidden;
 }
 
@@ -668,15 +688,6 @@ a {
     top: 78%;
     left: 80%;
     width: 20%;
-}
-
-.weaponDealerTwo {
-    margin: 0px;
-    position: fixed;
-    width: 100%;
-    height: -webkit-fill-available;
-    z-index: -1;
-    filter: brightness(0.5);
 }
 
 .nightsWallpaperTwo {
@@ -698,6 +709,25 @@ width: 100%;
     filter: brightness(2) drop-shadow(260px 85px 2px snow);
     animation: nightTwinkle 10s ease 0s infinite normal none;
 }
+
+.finalFantasyBackgroundTwo {
+    margin: 0px;
+    width: 100%;
+    position: fixed;
+    height: -webkit-fill-available;
+    filter: brightness(0.5);
+    z-index: -1;
+}
+
+.weaponDealerTwo {
+    margin: 0px;
+    position: fixed;
+    width: 100%;
+    height: -webkit-fill-available;
+    z-index: -1;
+    filter: brightness(0.5);
+}
+
 
 .personaFourBackgroundTwo {
     margin: 0px;

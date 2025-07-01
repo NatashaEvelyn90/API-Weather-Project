@@ -1,4 +1,6 @@
+const mainMenu = document.getElementById("mainMenu");
 const yourLocationWeather = document.getElementById("weatherUpdate");
+const mainTitle = document.getElementById("mainTitle");
 const bottomFoot = document.getElementById("footEr");
 const information = document.getElementById("disclaimerInfo")
 const forecastDiv = document.getElementById("forecast");
@@ -78,15 +80,17 @@ function backgroundTime() {
   const noctis = document.querySelector("#fifteen");
   const noctisTwo = document.querySelector("#ringOne");
   const noctisThree = document.querySelector("#ringTwo");
+  const noctisFour = document.querySelector("#fifteenTwo");
   
   //? Tetris Images 
-  const blockOne = document.querySelector("#shapes")  
-  const blockTwo = document.querySelector("#shapesOne")
-  const blockThree = document.querySelector("#shapesTwo")
-  const blockFour = document.querySelector("#shapesThree")
-  const blockFive = document.querySelector("#shapesFour")
-  const blockSix = document.querySelector("#shapesFive")
-  const blockSeven = document.querySelector("#shapesSix")  
+  const tetrisBackground = document.querySelector("#tetrisBackground");
+  const blockOne = document.querySelector("#shapes") ; 
+  const blockTwo = document.querySelector("#shapesOne");
+  const blockThree = document.querySelector("#shapesTwo");
+  const blockFour = document.querySelector("#shapesThree");
+  const blockFive = document.querySelector("#shapesFour");
+  const blockSix = document.querySelector("#shapesFive");
+  const blockSeven = document.querySelector("#shapesSix");
 
   //? Arms Dealer
   const dealer = document.querySelector("#persona");
@@ -148,10 +152,13 @@ function backgroundTime() {
     noctis.removeAttribute("hidden");
     noctisTwo.removeAttribute("hidden");
     noctisThree.removeAttribute("hidden");
+    noctisFour.removeAttribute("hidden");
     milkyWay.style.visibility = 'hidden';
     gratia.play();
 
   }else if(currentTime >= 19 && currentTime < 20) {
+    backgroundImageURL = tetrisBackground;
+    tetrisBackground.removeAttribute("hidden");
     blockOne.removeAttribute("hidden"); //? Tetris
     blockTwo.removeAttribute("hidden");
     blockThree.removeAttribute("hidden");
@@ -228,8 +235,8 @@ function getWeather() {
         day.innerHTML = `
           <h3>${period.name}</h3>
           <img src="${period.icon}" alt="${period.shortForecast}">
-          <p><strong class="strongTemperature">Temperature:</strong> <span class="strongOne">${period.temperature}°${period.temperatureUnit}</span></p>
-          <p><strong class="strongPrediction">Predicted Forecast:</strong> <span class="strongOne">${period.shortForecast}</span></p>
+          <p><strong class="strongTemperature">Temperature:<br/></strong> <span class="strongOne">${period.temperature}°${period.temperatureUnit}</span></p>
+          <p><strong class="strongPrediction">Predicted Forecast:<br/></strong> <span class="strongOne">${period.shortForecast}</span></p>
         `;
         return day;
       });

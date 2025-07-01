@@ -58,11 +58,14 @@
         <img src="./MEDIA/final-fantasy-xv-wallpaper-xuzfotgt0cmng84b.jpg" alt="final fantasy fifteen castle" class="finalFantasyBackground" id="fifteen" hidden>
         <img src="./MEDIA/Ring_of_the_Lucii_Render.png" alt="final fantasy fifteen ring" class="finalFantasyRing" id="ringOne" hidden>
         <img src="./MEDIA/Ring_of_the_Lucii_Render.png" alt="final fantasy fifteen ring" class="finalFantasyRingTwo" id="ringTwo" hidden>
+        <!--! This is for the smaller screens  -->
+        <img src="./MEDIA/FinalFantasyVX.jpg" alt="Final Fantasy Fifteen" class="finalFantasyBackgroundTwo d-sm-none" id="fifteenTwo" hidden>
         <!-- #endregion -->
 
         <!--? Tetris section  -->
         <!-- #region -->
         <span class="game-tetris">
+            <img src="./MEDIA/tetris-background.jpg" alt="tetris background" class="tetrisBackground" id="tetrisBackground" hidden>
             <img src="./MEDIA/H block.png" alt="h block" class="tetris" id="shapes" hidden>
             <img src="./MEDIA/I block.png" alt="i block" class="tetris" id="shapesOne" hidden>
             <img src="./MEDIA/J block.png" alt="j block" class="tetris" id="shapesTwo" hidden>
@@ -100,19 +103,19 @@
 
         <!--? Main Header Menu  -->
         <!--#region main menu  -->
-        <span class="d-flex align-items-center justify-content-center mainMenu">
+        <!-- <span class="d-flex align-items-center justify-content-center mainMenu">
             <ul class="mainInfo d-flex flex-wrap justify-content-evenly">
                 <li class="col-4"><a href="#">About</a></li>
                 <li class="col-4"><a href="#">NEW</a></li>
                 <li class="col-4"><a href="#">Contact</a></li>
             </ul>
-        </span>
+        </span> -->
         <!--#endregion  -->
 
         <!--! Your Local Weather TEXT  -->
-        <h1 class="text-center mainTitle">Your Local <strong class="titleWeather">Weather</strong></h1>
     </header>
     <main>
+        <h1 class="text-center mainTitle" id="mainTitle">Your Local <strong class="titleWeather">Weather</strong></h1>
         <!--? Zip Code entry  -->
         <!--#region zip code  -->
         <span class="d-flex flex-wrap align-items-center zipCode">
@@ -164,6 +167,7 @@
             <button class="pause btnGradient" id="pauseMusic">Pause</button>
         ALL RIGHTS RESERVED. &copy;
         <span class="disclaimer" id="disclaimerInfo">Music will play as soon as you click "GO". Make sure your volume is at an adequate level or else it might startle you!<br>*DISCLAIMER* I do not own any of the music! </span>
+        
     </footer>
     <script src="./JS/app.js"></script>
 </body>
